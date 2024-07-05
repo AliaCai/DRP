@@ -30,12 +30,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey("d")) //input use update so it may untoned with fixUpdate sometimes -> not worry now
         {
-            rb.AddForce(sidewaysForce*Time.deltaTime,0,0);
+            rb.AddForce(sidewaysForce*Time.deltaTime,0,0, ForceMode.VelocityChange);//forceparmeter ->which way to add force -> velocity change: repsonsibe to go left and right
+
+            //drag: air resistance-> the higher the drag the more quickly our object is going to stop by air
         }
 
-        if (Input.GetKey("a"))
+       if (Input.GetKey("a"))
         {
-            rb.AddForce(-sidewaysForce*Time.deltaTime,0,0);
+            rb.AddForce(-sidewaysForce*Time.deltaTime,0,0, ForceMode.VelocityChange);
         }
         
     }
