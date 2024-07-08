@@ -14,4 +14,6 @@ public class Score : MonoBehaviour
        Debug.Log(player.position.z); 
        scoreText.text = player.position.z.ToString("0");//change from high perception to int
     }
+
+    
 }
